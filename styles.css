@@ -4,9 +4,9 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #282c34;
+    background-color: #000000;
     color: white;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Helvetica', sans-serif;
 }
 
 #clock {
@@ -18,13 +18,13 @@ body {
 }
 
 #day {
-    font-size: 2em;
+    font-size: 10em;
 }
 
 #date {
-    font-size: 1.5em;
+    font-size: 10em;
 }
 
 #time {
-    font-size: 4em;
+    font-size: 20em;
 }
