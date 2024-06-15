@@ -4,11 +4,27 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #000000;
+    background-color: #282c34;
     color: white;
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 #clock {
-    font-size: 20em;
+    text-align: center;
+}
+
+#day, #date, #time {
+    margin: 10px 0;
+}
+
+#day {
+    font-size: 2em;
+}
+
+#date {
+    font-size: 1.5em;
+}
+
+#time {
+    font-size: 4em;
 }
