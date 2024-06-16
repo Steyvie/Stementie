@@ -1,9 +1,39 @@
-function updateTime() {
+function updateClock() {
     const now = new Date();
-    const formattedDate = now.toLocaleDateString();
-    const formattedTime = now.toLocaleTimeString();
-    document.getElementById('datetime').innerText = `${formattedDate} ${formattedTime}`;
+    
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const day = days[now.getDay()];
+    
+    const date = now.getDate();
+    const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const year = now.getFullYear();
+    const formattedDate = `${day} ${date}/${month}/${year}`;
+    
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const currentTime = `${hours}:${minutes}:${seconds}`;
+
+    document.getElementById('date').textContent = formattedDate;
+    document.getElementById('time').textContent = currentTime;
 }
 
-setInterval(updateTime, 1000);
-updateTime(); // Initial call to display time immediately
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+        });
+    } else {
+        document.exitFullscreen().catch(err => {
+            console.log(`Error attempting to disable full-screen mode: ${err.message} (${err.name})`);
+        });
+    }
+}
+
+document.getElementById('fullscreen-btn').addEventListener('click', toggleFullscreen);
+
+// Update the clock every second
+setInterval(updateClock, 1000);
+
+// Initial call to display the clock immediately
+updateClock();
