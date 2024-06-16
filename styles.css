@@ -1,27 +1,38 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: Helvetica, sans-serif;
-    background: #000000;
+    background-color: #000000;
+    color: white;
+    font-family: 'Helvetica', sans-serif;
 }
 
-.container {
+#clock {
     text-align: center;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
+#date, #time {
+    margin: 10px 0;
 }
 
-#datetime {
-    font-size: 20px;
-    color: #333;
+#date {
+    font-size: 10em;
+}
+
+#time {
+    font-size: 20em; /* Increased font size for better visibility */
+}
+
+#fullscreen-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 5px;
+    color: #282c34;
 }
